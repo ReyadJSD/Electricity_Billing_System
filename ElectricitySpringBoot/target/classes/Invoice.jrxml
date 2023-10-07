@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.5.final using JasperReports Library version 6.20.5-3efcf2e67f959db3888d79f73dde2dbd7acb4f8e  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Invoice" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="4eedbb89-b4f6-4469-9ab6-f642a1688cf7">
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#EEEFF0"/>
+		</conditionalStyle>
+	</style>
+	<style name="Table">
+		<box>
+			<pen lineWidth="1.0" lineColor="#000000"/>
+			<topPen lineWidth="1.0" lineColor="#000000"/>
+			<leftPen lineWidth="1.0" lineColor="#000000"/>
+			<bottomPen lineWidth="1.0" lineColor="#000000"/>
+			<rightPen lineWidth="1.0" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TH" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_CH" mode="Opaque" backcolor="#CACED0">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+	</style>
+	<style name="Table_TD" mode="Opaque" backcolor="#FFFFFF">
+		<box>
+			<pen lineWidth="0.5" lineColor="#000000"/>
+			<topPen lineWidth="0.5" lineColor="#000000"/>
+			<leftPen lineWidth="0.5" lineColor="#000000"/>
+			<bottomPen lineWidth="0.5" lineColor="#000000"/>
+			<rightPen lineWidth="0.5" lineColor="#000000"/>
+		</box>
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#D8D8D8"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="id" class="java.lang.Integer"/>
+	<parameter name="name" class="java.lang.String"/>
+	<parameter name="address" class="java.lang.String"/>
+	<parameter name="district" class="java.lang.String"/>
+	<parameter name="email" class="java.lang.String"/>
+	<parameter name="phone" class="java.lang.String"/>
+	<parameter name="meterNo" class="java.lang.String"/>
+	<parameter name="meterType" class="java.lang.String"/>
+	<parameter name="lmu" class="java.lang.Double"/>
+	<parameter name="cmu" class="java.lang.Double"/>
+	<parameter name="unit" class="java.lang.Double"/>
+	<parameter name="result" class="java.lang.Double"/>
+	<parameter name="netBill" class="java.lang.Double"/>
+	<parameter name="rentCharge" class="java.lang.Double"/>
+	<parameter name="tax" class="java.lang.Double"/>
+	<parameter name="totalBill" class="java.lang.Double"/>
+	<parameter name="lastDate" class="java.lang.String"/>
+	<parameter name="receiveDate" class="java.lang.String"/>
+	<parameter name="fineTotal" class="java.lang.Double"/>
+	<parameter name="month" class="java.lang.String"/>
+	<parameter name="year" class="java.lang.String"/>
+	<parameter name="status" class="java.lang.String"/>
+	<title>
+		<band height="500" splitType="Stretch">
+			<staticText>
+				<reportElement x="18" y="130" width="130" height="35" uuid="57aed2b1-4f4e-40a3-a6ad-54dae8dd4c5a">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill To]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="18" y="165" width="120" height="15" uuid="bc5d675b-cb5e-4f52-8020-c969183ede00"/>
+				<textFieldExpression><![CDATA[$P{name}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="120" width="556" height="1" uuid="806ce5df-1219-4876-ae0c-ca7405b1f246">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<textField>
+				<reportElement x="18" y="180" width="120" height="15" uuid="401af7d5-5096-4adf-a038-cfba699629be"/>
+				<textFieldExpression><![CDATA[$P{address}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="18" y="195" width="120" height="15" uuid="0d78b212-8355-4970-9032-3204130df5a4"/>
+				<textFieldExpression><![CDATA[$P{district}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="18" y="210" width="120" height="15" uuid="ccc0ae5b-1453-4795-b87d-495fe6346371"/>
+				<textFieldExpression><![CDATA[$P{email}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="195" width="120" height="15" uuid="6bd5fc5a-ae16-4f64-bfe9-776c2766803f"/>
+				<textFieldExpression><![CDATA["Ship state1"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="165" width="120" height="15" uuid="25db5f0f-9566-4c2f-8b16-801f56026230"/>
+				<textFieldExpression><![CDATA["Ship name"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="130" width="120" height="35" uuid="139ebe8d-25b0-411e-986c-270015400874">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="22" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Billed By]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="420" y="210" width="120" height="15" uuid="7f59ee5e-92ab-4631-8bf1-b2eea859d31d"/>
+				<textFieldExpression><![CDATA["Ship state 2"]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="420" y="180" width="120" height="15" uuid="e1a45bc2-a23c-4479-898b-f0a76dcf7756"/>
+				<textFieldExpression><![CDATA["Ship Address"]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="416" y="63" width="50" height="20" uuid="0f86baff-6386-4f3f-b3fe-2388707babe8"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="466" y="63" width="84" height="20" uuid="bb10dbe1-0a4f-4722-9953-c163b63cf979"/>
+				<textFieldExpression><![CDATA[$P{receiveDate}]]></textFieldExpression>
+			</textField>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="466" y="83" width="84" height="20" uuid="3836ce65-eca3-4cad-a6de-b1818def0a2b"/>
+				<textFieldExpression><![CDATA[$P{id}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="416" y="83" width="50" height="20" uuid="0b3f9342-da78-4cfa-9fc5-2301c4749678"/>
+				<box rightPadding="4"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Bill Id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="95" width="210" height="15" uuid="b8cc42fd-b569-497d-834d-7e854040ad18"/>
+				<text><![CDATA[95755457545]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="65" width="210" height="15" uuid="c226e44d-3bb5-4145-b0b3-903bf1d79fde"/>
+				<text><![CDATA[31/84 Dhanmondi-4]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="90" y="80" width="210" height="15" uuid="b96f7183-44f8-43ad-ba60-43d8fbf50b6e"/>
+				<text><![CDATA[Dhaka-1209]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="18" y="225" width="120" height="15" uuid="203c7267-7ea6-4e5c-b9fd-cad20cd23283"/>
+				<textFieldExpression><![CDATA[$P{phone}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="188" y="290" width="170" height="40" uuid="11756006-cabc-4de9-a13c-b9babb1c6315">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="25" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Bill Details]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="340" width="100" height="20" uuid="6ca35c77-f3c2-4a35-95c8-9455aed4f410"/>
+				<text><![CDATA[Meter Number]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="360" width="100" height="20" uuid="08db4166-d782-432d-bb52-1e373a8868c6"/>
+				<text><![CDATA[Meter Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="380" width="100" height="20" uuid="7fb21a73-b19c-40a8-99e0-026dbd0f52af"/>
+				<text><![CDATA[Last Month Unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="400" width="100" height="20" uuid="38da70a1-db00-4fc3-925c-cf2e1f51e81c"/>
+				<text><![CDATA[Current Month Unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="420" width="100" height="20" uuid="eff49fdc-c364-4a53-a221-0b1f3448f5fe"/>
+				<text><![CDATA[Unit Consumed]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="440" width="100" height="20" uuid="baf3f2e5-2ead-432a-982c-6f661d816e76"/>
+				<text><![CDATA[Bill Per Unit]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="460" width="100" height="20" uuid="ea6aeda4-7db3-4fb9-a170-0e420d9f4e68"/>
+				<text><![CDATA[Net Bill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="10" y="480" width="100" height="20" uuid="15bdb771-da88-4ecf-ae98-bafea9122cd5"/>
+				<text><![CDATA[Meter Rent Charge]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="160" y="340" width="100" height="20" uuid="c31d25f5-efe8-4136-bf79-4459083b6856"/>
+				<textFieldExpression><![CDATA[$P{meterNo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="360" width="100" height="20" uuid="ab195612-be16-4cde-962d-4f12fe8ad5b4"/>
+				<textFieldExpression><![CDATA[$P{meterType}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="380" width="100" height="20" uuid="9a311282-9620-4aa5-9bd9-28d35c012066"/>
+				<textFieldExpression><![CDATA[$P{lmu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="400" width="100" height="20" uuid="da80e7f1-0404-4b2b-80b5-01bcb3cad4c3"/>
+				<textFieldExpression><![CDATA[$P{cmu}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="420" width="100" height="20" uuid="5ef4e833-4127-4962-af95-289d5aaf832a"/>
+				<textFieldExpression><![CDATA[$P{unit}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="440" width="100" height="20" uuid="f5adab7b-71b6-4ae9-89f3-b35c396ea119"/>
+				<textFieldExpression><![CDATA[$P{result}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="460" width="100" height="20" uuid="a79549fb-099a-4fee-a286-01dcf5ec2c2d"/>
+				<textFieldExpression><![CDATA[$P{netBill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="160" y="480" width="100" height="20" uuid="580ff84c-8afb-454c-bc7c-30b595853132"/>
+				<textFieldExpression><![CDATA[$P{rentCharge}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="310" y="360" width="100" height="20" uuid="71fd5251-3004-4178-a380-735b5d124048"/>
+				<text><![CDATA[Total Bill]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="380" width="100" height="20" uuid="410532e0-5a09-421d-b05e-e69aaf2c6dc6"/>
+				<text><![CDATA[Last Date For Pay]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="400" width="100" height="20" uuid="302c9356-5dae-430a-984a-6068a78ab770"/>
+				<text><![CDATA[Bill Receive Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="420" width="100" height="20" uuid="900d47c7-7a73-437d-b5b0-5a75cae77816"/>
+				<text><![CDATA[Fine Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="440" width="100" height="20" uuid="53ea382c-b889-4f2d-9773-2b7e4372bbec"/>
+				<text><![CDATA[Bill Month]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="460" width="100" height="20" uuid="9cebefd1-b8de-4d4a-8fb9-053c702924b9"/>
+				<text><![CDATA[Bill Year]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="480" width="100" height="20" uuid="9153a582-12ad-40a7-b00b-9ce237a464ff"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="310" y="340" width="100" height="20" uuid="863a89a4-3794-4076-9913-51254bc73a43"/>
+				<text><![CDATA[Tax]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="450" y="340" width="100" height="20" uuid="97866853-639e-460f-a824-18e0cb47c6c5"/>
+				<textFieldExpression><![CDATA[$P{tax}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="360" width="100" height="20" uuid="e7c50cf5-128c-4f7d-bc0f-f58ba4f731b9"/>
+				<textFieldExpression><![CDATA[$P{totalBill}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="380" width="100" height="20" uuid="7780383b-ef63-40bf-84dd-4adcf94fb40e"/>
+				<textFieldExpression><![CDATA[$P{lastDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="400" width="100" height="20" uuid="bd3cd606-a8e5-4b14-b833-37b8d1d091e2"/>
+				<textFieldExpression><![CDATA[$P{receiveDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="420" width="100" height="20" uuid="6d5f2392-13cd-4d81-a0e6-a7c85a6693f1"/>
+				<textFieldExpression><![CDATA[$P{fineTotal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="440" width="100" height="20" uuid="2053b0d8-298a-4ab3-baf9-99513b9ea3de"/>
+				<textFieldExpression><![CDATA[$P{month}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="460" width="100" height="20" uuid="c5bd1539-a60d-4779-87be-943347aa51fc"/>
+				<textFieldExpression><![CDATA[$P{year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="450" y="480" width="100" height="20" uuid="ec59a2a0-8aad-41db-a673-d47f7ab80953"/>
+				<textFieldExpression><![CDATA[$P{status}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="280" width="556" height="1" uuid="5c6f7576-26cb-4bb6-a91a-687bfd4928de">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+			</line>
+			<rectangle>
+				<reportElement x="-20" y="-20" width="595" height="81" forecolor="#000000" backcolor="#262525" uuid="7d568ee2-0cca-4a40-a67f-5148d7c7b724"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="90" y="0" width="450" height="50" forecolor="#FFFFFF" uuid="e622555d-198b-4ccd-a4a1-c59c53304058">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+				</reportElement>
+				<textElement>
+					<font size="35" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Electricity Billing System]]></text>
+			</staticText>
+			<image>
+				<reportElement x="10" y="-20" width="80" height="80" uuid="ddf1e642-3bc5-44f0-8a4e-aa5d09301732"/>
+				<imageExpression><![CDATA["electricity logo2.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band/>
+	</columnHeader>
+	<lastPageFooter>
+		<band height="30">
+			<staticText>
+				<reportElement positionType="Float" mode="Opaque" x="0" y="0" width="556" height="30" backcolor="#E6E8E9" uuid="36aa233d-4305-48e6-974a-1bbf89bb3c8f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Serif" size="9" isItalic="true"/>
+				</textElement>
+				<text><![CDATA[Pay Your Bill In Time]]></text>
+			</staticText>
+		</band>
+	</lastPageFooter>
+</jasperReport>
