@@ -1,0 +1,89 @@
+
+<div class="" style="margin-right: 120px;">
+    <div class="row">
+      <div class="col-12">
+        <h3 class="">Bill Details</h3>
+      </div>
+    </div>
+    <div class="row mt-3 mb-2">
+      <div class="col-2">
+        <button class="btn btn-outline-success" type="submit" id="button-addon2" (click)="showAll()">Show All</button>
+      </div>
+      <div class="col-5">
+        <div class="input-group" style="margin-left: 20px;">
+          
+          <select class="form-select" aria-label="Default select example" id="month" name="month"
+                        [(ngModel)]="billdetails.month">
+                        <option>Select a Month</option>
+                        <option>January</option>
+                        <option>February</option>
+                        <option>March</option>
+                        <option>April</option>
+                        <option>May</option>
+                        <option>June</option>
+                        <option>Julay</option>
+                        <option>August</option>
+                        <option>September</option>
+                        <option>October</option>
+                        <option>November</option>
+                        <option>December</option>
+                    </select>
+          <button class="btn btn-outline-success" type="submit" id="button-addon2" (click)="searchBillsByMonth()">Search</button>
+        </div>
+      </div>
+      </div>
+      <div class="col-5">
+        
+    </div>
+    <div class="row">
+      <div class="col-12"> 
+        <div class="card-body">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead class="">
+              <tr>
+                <th scope="col">SL</th>
+                <th scope="col">Meter No</th>
+                <th scope="col">Customer Name</th>
+                <th scope="col">Address</th>
+                <th scope="col">Meter Type</th>
+                <th scope="col">Last Month Unit</th>
+                <th scope="col">Current Month Unit</th>
+                <th scope="col">Unit Consumed</th>
+                <th scope="col">Bill Per Unit</th>
+                <th scope="col">Net Bill</th>
+                <th scope="col">Meter Charge</th>
+                <th scope="col">Tax</th>                
+                <th scope="col">Month</th>
+                <th scope="col">Year</th>
+                <th scope="col">Total Bill</th>
+                <th scope="col">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr *ngFor="let st of billdetail; let i=index">
+                <th>{{i+1}}</th>
+                <td>{{st.meterNo}}</td>
+                <td>{{st.name}}</td>
+                <td>{{st.address}}</td>
+                <td>{{st.meterType}}</td>
+                <td>{{st.lmu}}</td>
+                <td>{{st.cmu}}</td>
+                <td>{{st.unit}}</td>
+                <td>{{st.result}}</td>
+                <td>{{st.netBill}}</td>
+                <td>{{st.rentCharge}}</td>
+                <td>{{st.tax}}</td>
+                <td>{{st.month}}</td>
+                <td>{{st.year}}</td>
+                <td>{{st.totalBill}}</td>
+                <td>{{st.status}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+

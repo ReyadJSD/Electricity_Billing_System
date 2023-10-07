@@ -1,0 +1,89 @@
+<!-- Earnings (Monthly) Card Example -->
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Paid Amount</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">${{dashboard.fineTotal | number:'1.2-2'}}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa-solid fa-bangladeshi-taka-sign fa-2x text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Earnings (Annual) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Pending Bills</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" style="font-size: 2rem;">{{dashboard.pendingBills}}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa-solid fa-clock-rotate-left fa-2x text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tasks Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-danger shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                            Pending Bill Amount</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">${{dashboard.totalBill | number:'1.2-2'}}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa-solid fa-bangladeshi-taka-sign fa-2x text-danger"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Pending Bill Month</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{dashboard.month}}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+        <!--Start Chart-->
+        <div class="row">
+            <div class="col-12 shadow p-3 mb-3 bg-body rounded">
+                <canvasjs-chart [options]="chartOptions1" [styles]="{width: '100%', height:'400px'}"></canvasjs-chart> 
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-xl-12 col-md-12">3
+                <canvas class="m-1 shadow" id="myChart" width="100%" height="50" #mychart></canvas>
+            </div>
+            
+        </div>
+       

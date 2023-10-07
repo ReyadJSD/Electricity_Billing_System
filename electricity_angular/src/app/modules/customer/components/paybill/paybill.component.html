@@ -1,0 +1,138 @@
+<ng-toast></ng-toast>
+<div style="margin-right: 70px;">
+    <form class="row g-3">
+        <h2>Pay Your Bill</h2>
+        <div class="col-md-6">
+            <label for="name" class="form-label">Month</label>
+            <div class="input-group">
+                <select class="form-select" aria-label="Default select example" id="month" name="month"
+                    [(ngModel)]="month">
+                    <option>Select a Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>Julay</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select>
+                <button class="btn btn-outline-success" type="submit" id="button-addon2"
+                    (click)="searchDetailsForCollectBill()">Search</button>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="name" class="form-label">Customer Name</label>
+            <input type="name" class="form-control" id="name" name="name" [(ngModel)]="name" disabled>
+        </div>
+        <div class="col-md-6">
+            <label for="year" class="form-label">Year</label>
+            <input type="text" class="form-control" id="year" name="year" [(ngModel)]="year" disabled>
+        </div>
+
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Meter Type</label>
+            <input type="text" class="form-control" id="meterType" name="meterType" [(ngModel)]="meterType" disabled>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Units Consumed</label>
+            <input type="text" class="form-control" id="unit" name="unit" [(ngModel)]="unit" disabled>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Total Bill</label>
+            <input type="text" class="form-control" id="totalBill" name="totalBill" [(ngModel)]="totalBill" disabled>
+        </div>
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Last Date For Payment</label>
+            <input type="date" class="form-control" id="lastDate" name="lastDate" [(ngModel)]="lastDate" disabled>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Bill Receiving Date</label>
+            <input type="date" class="form-control" id="receiveDate" name="receiveDate" [(ngModel)]="receiveDate"
+                (change)="calculateFine()">
+        </div>
+        <div class="col-md-6 dropdown">
+            <label for="name" class="form-label">Fine Total</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Calculate Fine" aria-label="Recipient's username"
+                    aria-describedby="button-addon2" id="fineTotal" name="fineTotal" [(ngModel)]="fineTotal" disabled>
+                <!-- <button class="btn btn-outline-success" type="submit" id="button-addon2"
+                    (click)="calculateFine()">Calculate Fine</button> -->
+            </div>
+        </div>
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Payment Status</label>
+            <input type="text" class="form-control" id="status" name="status" [(ngModel)]="status" value="{{status}}"
+                disabled>
+        </div>
+
+
+        <!--Payment Method-->
+        <div class="col-12">
+            <label class="form-label">Select Your Payment Method:</label>
+            <div class="form-control">
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="bkash" value="bkash"
+                        [(ngModel)]="selectedPaymentMethod">
+                    <label class="form-check-label" for="bkash">Bkash</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="nagad" value="nagad"
+                        [(ngModel)]="selectedPaymentMethod">
+                    <label class="form-check-label" for="nagad">Nagad</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="paymentMethod" id="rocket" value="rocket"
+                        [(ngModel)]="selectedPaymentMethod">
+                    <label class="form-check-label" for="rocket">Rocket</label>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="selectedPaymentMethod">
+            <h3>Enter Payment Details for {{ selectedPaymentMethod }}</h3>
+            <form>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="accountNumber" class="form-label">Account Number</label>
+                            <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="payment.phone">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="pinNumber" class="form-label">PIN Number</label>
+                            <input type="password" class="form-control" id="pinNumber" [(ngModel)]="pinNumber">
+                        </div>
+                    </div>
+                </div>
+                <div *ngIf="transactionIdGenerated">
+                    <div class="mb-3">
+                        <label for="transactionId" class="form-label">Transaction ID</label>
+                        <input type="text" class="form-control" id="tnxId" name="tnxId" [(ngModel)]="payment.tnxId" value="{{ tnxId }}" readonly>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
+        <div class="col-12">
+            <div class="row mb-3">
+                <div class="col-3">
+                    <button type="submit" class="btn btn-primary" (click)=" collectBillFromCustomer()">Pay Bill</button>
+                </div>
+                <div class="col-6">
+
+                </div>
+                <div class="col-3">
+                    <button type="submit" class="btn btn-primary" style="margin-left: 66px;"
+                        (click)=" receiptPage(meterNo, month)">Generate Receipt</button>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
