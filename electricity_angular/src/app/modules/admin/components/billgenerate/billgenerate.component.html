@@ -1,0 +1,117 @@
+<ng-toast></ng-toast>
+<div style="margin-right: 70px;">
+<form class="row g-3">
+    <h2>Genarate Customer Bill</h2>
+    <div class="col-md-6 dropdown">
+      <label for="name" class="form-label">Meter Number</label>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Write a Meter Number" aria-label="Recipient's username" aria-describedby="button-addon2" id="meterNo" name="meterNo" [(ngModel)]="meterNo">
+        <button class="btn btn-outline-success" type="submit" id="button-addon2"(click)="searchDetailsForBillGenerate()">search</button>
+      </div>
+      <!-- <input type="name" class="form-control" > -->
+      <!-- <select #drop size=""  class="form-select" aria-label="Default select example" id="meterNo" name="meterNo" [(ngModel)]="meterNo" #meterNo1="ngModel">
+        <option selected *ngFor="let x of customers; let z =index" [value]="z">{{x.meterNo}}</option>
+      </select> -->
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Customer Name</label>
+      <input type="name" class="form-control" id="name" name="name" [(ngModel)]="name">
+    </div>
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Address</label>
+        <input type="email" class="form-control" id="address" name="address" [(ngModel)]="address">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Meter Type</label>
+        <input type="text" class="form-control" id="meterType" name="meterType" [(ngModel)]="meterType" (click)="calculateResult()">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Last Month Unit</label>
+        <input type="text" class="form-control" id="lmu" name="lmu" [(ngModel)]="lmu" (keyup)="calculateResult()">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Current Month Unit</label>
+        <input type="text" class="form-control" id="cmu" name="cmu" [(ngModel)]="cmu" (keyup)="calculateResult()">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Units Consumed</label>
+        <input type="text" class="form-control" id="unit" name="unit" [(ngModel)]="unit"  >
+      </div>
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Bill Per Unit</label>
+        <input type="text" class="form-control" id="result" name="result" [(ngModel)]="result" >
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Net Bill</label>
+        <input type="text" class="form-control" id="netBill" name="netBill" [(ngModel)]="netBill" value="{{netBill | number : '1.2-2'}}">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Meter Rent Charge</label>
+        <input type="text" class="form-control" id="rentCharge" name="rentCharge" [(ngModel)]="rentCharge">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Tax</label>
+        <input type="text" class="form-control" id="tax" name="tax" [(ngModel)]="tax" value="{{tax | number : '1.2-2'}}">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Month</label>
+        <label for="inputPassword4" class="form-label" style="margin-left: 200px;">Year</label>
+        <div class="row">
+          <div class="col-6">
+            <select class="form-select" aria-label="Default select example" id="month" name="month" [(ngModel)]="month">
+              <option>Select a Month</option>
+              <option>January</option>
+              <option>February</option>
+              <option>March</option>
+              <option>April</option>
+              <option>May</option>
+              <option>June</option>
+              <option>Julay</option>
+              <option>August</option>
+              <option>September</option>
+              <option>October</option>
+              <option>November</option>
+              <option>December</option>
+      </select>
+          </div>
+          <div class="col-6">
+            <select class="form-select" aria-label="Default select example" id="year" name="year" [(ngModel)]="year">
+              <option>Select a Year</option>
+              <option>2023</option>
+              <option>2024</option>
+              <option>2024</option>
+              <option>2025</option>
+              <option>2026</option>
+              <option>2027</option>
+              <option>2028</option>
+              <option>2029</option>
+              <option>2030</option>
+      </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Total Bill</label>
+        <input type="text" class="form-control" id="totalBill" name="totalBill" value="{{totalBill | number : '1.2-2'}}">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Payment Status</label>
+        <input type="text" class="form-control" id="status" name="status" [(ngModel)]="status" value="{{status}}">
+      </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary" (click)="calculateTotal()">Calculate</button>
+        </div>
+        <div class="col-7">
+            
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary ms-5" (click)="saveBillInformation()">Save Bill</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+

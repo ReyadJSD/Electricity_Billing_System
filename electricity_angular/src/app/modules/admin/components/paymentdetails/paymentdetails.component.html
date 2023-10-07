@@ -1,0 +1,81 @@
+<ng-toast></ng-toast>
+<div style="margin-right: 70px;">
+<form class="row g-3">
+    <h2>Make Customer Payment Details</h2>
+    <div class="col-md-6 dropdown">
+      <label for="name" class="form-label">Meter No And Month</label>
+            <div class="input-group">
+                <input type="text" class="form-control" id="meterNo" name="meterNo" [(ngModel)]="meterNo"
+                    placeholder="Write MeterNo" aria-label="Write MeterNo" aria-describedby="button-addon2">
+                <select class="form-select" aria-label="Default select example" id="month" name="month"
+                    [(ngModel)]="month">
+                    <option>Select a Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>Julay</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select>
+                <button class="btn btn-outline-success" type="submit" id="button-addon2"
+                    (click)="searchDetailsForPayment()">Search</button>
+            </div>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Customer Name</label>
+      <input type="name" class="form-control" id="name" name="name" [(ngModel)]="name">
+    </div>
+      
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Year</label>
+        <input type="text" class="form-control" id="year" name="year" [(ngModel)]="year">
+                
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Meter Type</label>
+        <input type="text" class="form-control" id="meterType" name="meterType" [(ngModel)]="meterType">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Units Consumed</label>
+        <input type="text" class="form-control" id="unit" name="unit" [(ngModel)]="unit"  >
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Total Bill</label>
+        <input type="text" class="form-control" id="totalBill" name="totalBill" [(ngModel)]="totalBill">
+      </div>
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Last Date For Payment</label>
+        <input type="date" class="form-control" id="lastDate" name="lastDate" [(ngModel)]="lastDate">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Bill Receiving Date</label>
+        <input type="date" class="form-control" id="receiveDate" name="receiveDate" [(ngModel)]="receiveDate">
+      </div>
+      <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Payment Status</label>
+        <input type="text" class="form-control" id="status" name="status" [(ngModel)]="status" value="{{status}}">
+      </div>
+    <div class="col-12">
+      <div class="row">
+        <div class="col-3">
+            <button type="submit" class="btn btn-primary" (click)="savePaymentInformation()">Save</button>
+        </div>
+        <div class="col-7">
+            
+        </div>
+        <div class="col-2">
+            <button type="submit" class="btn btn-primary ms-5">Save Bill</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+

@@ -1,0 +1,266 @@
+<ng-toast></ng-toast>
+<div class="container">
+    <div class="row mb-2">
+        <div class="col-5">
+            <div class="input-group" style="margin-left: 0px;">
+                <input type="text" class="form-control" id="meterNo" name="meterNo" [(ngModel)]="receipts.meterNo"
+                    placeholder="Write MeterNo" aria-label="Write MeterNo" aria-describedby="button-addon2">
+                <select class="form-select" aria-label="Default select example" id="month" name="month"
+                    [(ngModel)]="receipts.month">
+                    <option>Select a Month</option>
+                    <option>January</option>
+                    <option>February</option>
+                    <option>March</option>
+                    <option>April</option>
+                    <option>May</option>
+                    <option>June</option>
+                    <option>Julay</option>
+                    <option>August</option>
+                    <option>September</option>
+                    <option>October</option>
+                    <option>November</option>
+                    <option>December</option>
+                </select>
+                <button class="btn btn-outline-success" type="submit" id="button-addon2"
+                    (click)="searchAllDetailsForReceipt()">Search</button>
+            </div>
+        </div>
+        <div class="col-7">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="invoice-title">
+                        <h4 class="float-end font-size-15">Bill No #DS0204{{receipts.billId}} <span
+                                class="badge bg-success font-size-12 ms-2">{{receipts.status}}</span></h4>
+                        <div class="mb-2">
+                            <a class="navbar-brand" href="#">
+                                <img src="assets/electricity logo.png" alt="Logo" height="45"
+                                    class="d-inline-block align-text-center">
+                                <h3 class="mt-2">Electricity Billing System</h3>
+                            </a>
+                        </div>
+                        <div class="text-muted">
+                            <p class="mb-1">31/84 Dhanmondi-4 Dhaka, Dhaka 1209</p>
+                            <p class="mb-1"><i class="uil uil-envelope-alt me-1"></i> electricitybillingsystem.com</p>
+                            <p><i class="uil uil-phone me-1"></i> 012-345-6789</p>
+                        </div>
+                    </div>
+
+                    <hr class="my-4">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="text-muted">
+                                <h5 class="font-size-16 mb-3">Billed To:</h5>
+                                <h5 class="font-size-15 mb-2">{{receipts.name}}</h5>
+                                <p class="mb-1">{{receipts.address}}, {{receipts.district}}</p>
+                                <p class="mb-1"></p>
+                                <p class="mb-1">{{receipts.email}}</p>
+                                <p class="mb-1">{{receipts.phone}}</p>
+                                <p>001-234-5678</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="text-muted">
+                                <h5 class="font-size-16 mb-3">Billed By:</h5>
+                                <h5 class="font-size-15 mb-2">{{adminprofile.userId}}</h5>
+                                <h5 class="font-size-15 mb-2">{{adminprofile.name}}</h5>
+                                <p class="mb-1"></p>
+                                <p class="mb-1">{{adminprofile.email}}</p>
+                                <p class="mb-1">{{adminprofile.phone}}</p>
+                                <p>001-234-5678</p>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                        <div class="col-sm-4">
+                            <div class="text-muted text-sm-end">
+                                <div>
+                                    <h5 class="font-size-15 mb-1">Bill No:</h5>
+                                    <p>#DS0204{{receipts.billId}}</p>
+                                </div>
+                                <div class="mt-4">
+                                    <h5 class="font-size-15 mb-1">Bill Date:</h5>
+                                    <p>{{receipts.receiveDate}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end col -->
+                    </div>
+                    <!-- end row -->
+
+                    <div class="py-2">
+                        <h3 class="font-size-15">Bill Details</h3>
+                        <div class="row">
+                            <div class="col-5">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Meter Number</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.meterNo}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Meter Type</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.meterType}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Last Month Unit</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.lmu}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Current Month Unit</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.cmu}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Unit</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.unit}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Bill Per Unit</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.result}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Net Bill</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.netBill}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Meter Rent Charge</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.rentCharge}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                            </div>
+                            <div class="col-2">
+
+                            </div>
+                            <div class="col-5">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Tax</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.tax}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Total Bill</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.totalBill}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Last Date For Pay Bill</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.lastDate}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Bill Receive Date</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.receiveDate}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Fine Total</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.fineTotal}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Bill Month</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.month}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Bill Year</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.year}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <h6>Payment Status</h6>
+                                    </div>
+                                    <div class="col-6">
+                                        <h6>{{receipts.status}}</h6>
+                                    </div>
+                                    <hr class="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-print-none mt-4">
+                            <div class="float-end">
+                                <a (click)="japerReport()" class="btn btn-success me-1"><i
+                                        class="fa fa-print"></i></a>
+                                <a href="#" class="btn btn-primary w-md">Send</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!-- end col -->
+    </div>
+</div>
+
+<button (click)="generatePDF('download')">Download PDF</button>
+<button (click)="generatePDF('print')">Print PDF</button>
+<button (click)="generatePDF('open')">Open PDF</button>

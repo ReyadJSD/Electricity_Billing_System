@@ -1,0 +1,234 @@
+<!-- Earnings (Monthly) Card Example -->
+<div class="row">
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-info shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="text-xs font-weight-bold text-info text-uppercase mb-1">Total Customers
+                    </div>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <div class="h2 mb-0 mr-3 font-weight-bold text-gray-800">{{dashboard.rowCount}}</div>
+                        </div>
+                        <div class="col">
+                            <div class="progress progress-lg mr-2">
+                                <div class="progress-bar bg-info" role="progressbar"
+                                    style="width: 100%" aria-valuenow="50" aria-valuemin="0"
+                                    aria-valuemax="100">{{100}}%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <i class="fa-solid fa-users fa-2x text-dark-300"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Earnings (Annual) Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+    <div class="card border-left-warning shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="font-weight-bold text-warning text-uppercase mb-1" style="font-size: .70rem;">Residential Customers
+                    </div>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <div class="h2 mb-0 mr-3 font-weight-bold text-gray-800">{{dashboard.residential}}</div>
+                        </div>
+                        <div class="col">
+                            <div class="progress progress-xlg mr-2" style="font-size: .5rem;">
+                                <div class="progress-bar bg-warning" role="progressbar"
+                                [style.width.%]="percentageValue" aria-valuenow="50" aria-valuemin="0"
+                                    aria-valuemax="100">{{ percentageValue.toFixed(2) }}%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <i class="fa-solid fa-users fa-2x text-dark-300" style="color: #ffcc00;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Tasks Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+   <div class="card border-left-success shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="font-weight-bold text-success text-uppercase mb-1" style="font-size: .7rem;">Small Industrial Customers
+                    </div>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <div class="h2 mb-0 mr-3 font-weight-bold text-gray-800">{{dashboard.smallIndustry}}</div>
+                        </div>
+                        <div class="col">
+                            <div class="progress progress-xlg mr-2" style="font-size: .5rem;">
+                                <div class="progress-bar bg-success" role="progressbar"
+                                [style.width.%]="percentageSmallInd" aria-valuenow="50" aria-valuemin="0"
+                                    aria-valuemax="100">{{ percentageSmallInd.toFixed(2) }}%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <i class="fa-solid fa-users fa-2x text-dark-300" style="color: rgba(21, 175, 98, 0.725)"></i>
+                </div>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<!-- Pending Requests Card Example -->
+<div class="col-xl-3 col-md-6 mb-4">
+    
+
+    <div class="card border-left-danger shadow h-100 py-2">
+        <div class="card-body">
+            <div class="row no-gutters align-items-center">
+                <div class="col mr-2">
+                    <div class="font-weight-bold text-danger text-uppercase mb-1" style="font-size: .70rem;">Business Customers
+                    </div>
+                    <div class="row no-gutters align-items-center">
+                        <div class="col-auto">
+                            <div class="h2 mb-0 mr-3 font-weight-bold text-gray-800">{{dashboard.business}}</div>
+                        </div>
+                        <div class="col">
+                            <div class="progress progress-xlg mr-2" style="font-size: .5rem;">
+                                <div class="progress-bar bg-danger" role="progressbar"
+                                [style.width.%]="percentageBusiness" aria-valuenow="50" aria-valuemin="0"
+                                    aria-valuemax="100">{{ percentageBusiness.toFixed(2) }}%</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-auto">
+                    <i class="fa-solid fa-users fa-2x text-dark-300" style="color: #f44343"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!--Second Row Card-->
+<!-- Earnings (Monthly) Card Example -->
+<div class="row">
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Earnings (Total)</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">${{dashboard.totalEarning | number:'1.2-2'}}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa-solid fa-bangladeshi-taka-sign fa-2x text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Earnings (Annual) Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-danger shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">
+                            Pending Bill Amount</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">${{dashboard.pendingEarning | number:'1.2-2'}}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa-solid fa-bangladeshi-taka-sign fa-2x text-danger"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Tasks Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-primary shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Pending Bills</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" style="font-size: 2rem;">{{dashboard.pendingBills}}</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fa-solid fa-clock-rotate-left fa-2x text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Pending Requests Card Example -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card border-left-warning shadow h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Pending Requests</div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">18</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-comments fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!--Start Chart-->
+    <div class="row">
+        <div class="col-6 shadow p-3 mb-3 bg-body rounded" style="margin-left: 14px;">
+            <canvasjs-chart [options]="chartOptions" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart>
+        </div>
+        <div class="col-5 shadow p-3 mb-3 bg-body rounded" style="margin-left: 55px;">
+            <canvasjs-chart [options]="chartOptions1" [styles]="{width: '100%', height:'360px'}"></canvasjs-chart> 
+        </div>
+    </div>
+    <div>        
+    </div>
+
+    <!-- Another Type Charts-->
+    <div class="row">
+        <div class="col-xl-6 col-md-12">
+            <canvas class="m-1 shadow" id="myChart" width="700" height="250" #mychart></canvas>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <canvas class="m-1 shadow" id="MyChartTwo" width="700" height="250" #mychart2></canvas>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-6 col-md-12">
+            <canvas class="m-1 shadow" id="MyChartPie" width="700" height="250" #mychart3></canvas>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <canvas class="m-1 shadow" id="MyChartLine" width="700" height="250" #mychart4></canvas>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+

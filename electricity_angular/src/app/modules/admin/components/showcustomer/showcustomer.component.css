@@ -1,0 +1,13 @@
+table {
+    width: 100%;
+    table-layout: auto-fit; /* or use "auto" for only automatic sizing without taking all available space */
+  }
+  
+  th, td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    white-space: nowrap; /* Prevent content from wrapping in the cells */
+    overflow: hidden; /* Hide any overflowing content */
+    text-overflow: ellipsis; /* Show an ellipsis (...) for text that overflows the cell */
+  }
