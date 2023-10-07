@@ -1,0 +1,5 @@
+<div class="container mt-3">
+    <h2 class="text-center">About Electricity Billing System</h2>   
+    <p [ngClass]="{'limitTextHeight': showMoreText}" [ngClass]="{'limitTextHeight': !showMoreText}"align="justify">{{ content }}</p>
+<button (click)="toggleReadMore()">{{ showMoreText ? 'Read Less' : 'Read More' }}</button>
+</div>

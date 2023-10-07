@@ -1,0 +1,38 @@
+.card {
+    background-color: #7fa1c263;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.726);
+  }
+  
+  .card-title {
+    color: #0752a3; /* Blue color */
+  }
+  
+  .card-text {
+    color: #6c757d; /* Gray color */
+  }
+  
+  .btn-primary {
+    background-color: #28a745; /* Green color */
+    border-color: #28a745;
+  }
+
+  /* Carusel Button Color */
+  
+  /* Change the active indicator color */
+.carousel-indicators .active {
+    background-color: #28a745; /* Change to your desired color */
+    border-color: hsl(134, 61%, 41%); /* Change to your desired color */
+    width: 50px; /* Adjust the width */
+  height: 1px; /* Adjust the height */
+  }
+  
+  /* Change the non-active indicator color */
+  .carousel-indicators button {
+    background-color: #0de04900; /* Change to your desired color */
+    border-color: #ffffffb9; /* Change to your desired color */
+    width: 50px; /* Adjust the width */
+    height: 2px; /* Adjust the height */
+  }
+  

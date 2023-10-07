@@ -1,0 +1,106 @@
+<ng-toast></ng-toast>
+<div class="container mt-5 shadow p-3 mb-5 rounded" style="margin-right: 90px; background-color: rgba(220, 251, 252, 0.439);">
+  
+<form class="row g-3" (ngSubmit)="saveCustomer()">
+  <h2>Apply For New Connection Form</h2>
+  <div class="col-md-6">
+    <label for="name" class="form-label">Customer Name</label>
+    <input type="name" class="form-control" id="name" name="name" [(ngModel)]="name" #name1="ngModel">
+  </div>
+
+    
+  <div class="col-md-6">
+    <label for="gender" class="form-label">Gender</label>
+    <div class="form-control">
+      <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="male" value="male" [(ngModel)]="gender">
+          <label class="form-check-label" for="inlineRadio1">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="female" value="female" [(ngModel)]="gender">
+          <label class="form-check-label" for="inlineRadio2">Female</label>
+        </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Meter Number</label>
+      <input type="email" class="form-control" id="meterNo" name="meterNo" [(ngModel)]="meterNo" #meterNo1="ngModel">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Meter Type</label>
+      <select id="meterType" name="meterType" [(ngModel)]="meterType" #meterType1="ngModel" class="form-select">
+          <option selected>Residential</option>
+          <option>Business</option>
+          <option>Small Industry</option>
+        </select>
+    </div>
+    <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Issue Date</label>
+      <input type="date" class="form-control" id="issueDate" name="issueDate" [(ngModel)]="issueDate" #issueDate1="ngModel">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">District</label>
+      <input type="text" class="form-control" id="district" name="district" [(ngModel)]="district" #district1="ngModel">
+    </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label">Address</label>
+    <input type="text" class="form-control" id="address" name="address" [(ngModel)]="address" #address1="ngModel">
+  </div>
+  <div class="col-md-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" #email1="ngModel">
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword4" class="form-label">Phone Number</label>
+      <input type="text" class="form-control" id="phone" name="phone" [(ngModel)]="phone" #phone1="ngModel">
+    </div>
+  <div class="col-12">
+    <div class="row">
+      <div class="col-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+      <div class="col-8">
+          
+      </div>
+      <div class="col-1">
+          <button type="submit" class="btn btn-primary ms-3" (click)="adminPage()">Back</button>
+      </div>
+    </div>
+  </div>
+</form>
+</div>
+
+
+
+
+<!-- location change
+<form [formGroup]="locationForm">
+  <div class="form-group">
+    <label for="division">Select Division:</label>
+    <select formControlName="division" id="division" class="form-control" (change)="onDivisionChange()">
+      <option value="" disabled selected>Select Division</option>
+      <option *ngFor="let division of divisions" [value]="division">{{ division }}</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="district">Select District:</label>
+    <select formControlName="district" id="district" class="form-control" (change)="onDistrictChange()">
+      <option value="" disabled selected>Select District</option>
+      <option *ngFor="let district of districts[locationForm.get('division')?.value]" [value]="district">
+        {{ district }}
+      </option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="subdistrict">Select Subdistrict:</label>
+    <select formControlName="subdistrict" id="subdistrict" class="form-control">
+      <option value="" disabled selected>Select Subdistrict</option>
+      <option *ngFor="let subdistrict of subdistricts[locationForm.get('district')?.value]" [value]="subdistrict">
+        {{ subdistrict }}
+      </option>
+    </select>
+  </div>
+</form> -->
+
