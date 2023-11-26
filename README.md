@@ -37,17 +37,17 @@ Users can pay their bills securely through the application.
 ### Receipts
 Users can print or download their bill receipts in PDF format.
 
-# Technologies Used
+## Technologies Used
 
-## Front-End
+### Front-End
 Angular
 
-## Back-End
+### Back-End
 Spring Boot
 
-## Database
+### Database
 MySQL
 
-## Report Generation
+### Report Generation
 Jasper Report
 
